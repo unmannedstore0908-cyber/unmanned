@@ -43,7 +43,24 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style={{ padding: isScrolled ? '0.85rem 0' : '1.25rem 0', backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.96)' : 'rgba(255, 255, 255, 0.88)', backdropFilter: 'blur(10px)', borderBottom: '1px solid var(--border-subtle)', boxShadow: isScrolled ? '0 1px 3px 0 rgba(0, 0, 0, 0.05)' : 'none' }}>
+    <header
+      className="header-nav"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        width: '100%',
+        zIndex: 1000,
+        transition: 'padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease',
+        padding: isScrolled ? '0.75rem 0' : '1.15rem 0',
+        backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.96)' : 'rgba(255, 255, 255, 0.88)',
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
+        borderBottom: '1px solid var(--border-subtle)',
+        boxShadow: isScrolled ? '0 2px 8px rgba(0, 0, 0, 0.06)' : 'none'
+      }}
+    >
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 2rem' }}>
         {/* Logo */}
         <a href="#" className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', textDecoration: 'none' }}>
@@ -69,14 +86,14 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)} style={{ display: 'none', background: 'none', border: 'none', color: '#0f172a', cursor: 'pointer' }}>
+        <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)} style={{ display: 'none', background: 'none', border: 'none', color: '#0f172a', cursor: 'pointer' }} aria-label="Toggle navigation">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="mobile-drawer" style={{ position: 'fixed', top: '75px', left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(255, 255, 255, 0.98)', backdropFilter: 'blur(10px)', zIndex: 40, display: 'flex', flexDirection: 'column', padding: '2rem 1.5rem', gap: '1.5rem', borderBottom: '1px solid var(--border-subtle)' }}>
+        <div className="mobile-drawer" style={{ position: 'fixed', top: isScrolled ? '62px' : '72px', left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(255, 255, 255, 0.98)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', zIndex: 999, display: 'flex', flexDirection: 'column', padding: '2rem 1.5rem', gap: '1.5rem', borderBottom: '1px solid var(--border-subtle)', overflowY: 'auto' }}>
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} onClick={(e) => handleLinkClick(e, link.href)} style={{ color: 'var(--text-primary)', textDecoration: 'none', fontSize: '1.15rem', fontWeight: 600, paddingBottom: '0.75rem', borderBottom: '1px solid var(--border-subtle)' }}>
               {link.name}

@@ -75,6 +75,28 @@ body {
   flex-direction: column;
 }
 
+/* Header Navigation Strict No-Wrap Rules */
+.header-nav {
+  width: 100% !important;
+}
+
+.header-nav .container {
+  flex-wrap: nowrap !important;
+}
+
+.header-nav a,
+.header-nav span,
+.header-nav button,
+.desktop-nav,
+.desktop-nav a,
+.logo-container,
+.logo-text,
+.logo-text span {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}
+
 /* Scrollbar Customization */
 ::-webkit-scrollbar {
   width: 7px;

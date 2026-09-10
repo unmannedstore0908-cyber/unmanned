@@ -75,7 +75,7 @@ export default function Header() {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.75rem, 1.25vw, 1.4rem)', flexShrink: 0 }}>
+        <nav className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexShrink: 0 }}>
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -84,9 +84,9 @@ export default function Header() {
               style={{
                 color: 'var(--text-secondary)',
                 textDecoration: 'none',
-                fontSize: '0.88rem',
+                fontSize: '0.85rem',
                 fontWeight: 600,
-                padding: '0.35rem 0.2rem',
+                padding: '0.25rem 0.2rem',
                 transition: 'color 0.2s ease',
                 whiteSpace: 'nowrap',
                 flexShrink: 0
@@ -102,9 +102,9 @@ export default function Header() {
             onClick={(e) => handleLinkClick(e, '#contact')}
             className="btn btn-primary"
             style={{
-              marginLeft: '0.5rem',
-              padding: '0.55rem 1.25rem',
-              fontSize: '0.85rem',
+              marginLeft: '0.35rem',
+              padding: '0.5rem 1.15rem',
+              fontSize: '0.82rem',
               whiteSpace: 'nowrap',
               flexShrink: 0
             }}
@@ -177,7 +177,7 @@ export default function Header() {
 
       {/* Styling specific rules that need standard CSS injections */}
       <style>{`
-        @media (max-width: 1080px) {
+        @media (max-width: 1140px) {
           .desktop-nav {
             display: none !important;
           }

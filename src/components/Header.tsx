@@ -62,45 +62,114 @@ export default function Header() {
         boxShadow: isScrolled ? '0 2px 8px rgba(0, 0, 0, 0.06)' : 'none'
       }}
     >
-      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 2rem' }}>
+      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 1.5rem', maxWidth: '1240px' }}>
         {/* Logo */}
-        <a href="#" className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', textDecoration: 'none' }}>
-          <div className="logo-icon-box" style={{ width: '38px', height: '38px', borderRadius: '8px', background: '#0f172a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <a href="#" className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', textDecoration: 'none', flexShrink: 0 }}>
+          <div className="logo-icon-box" style={{ width: '38px', height: '38px', borderRadius: '8px', background: '#0f172a', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
             <Cpu size={20} color="#ffffff" />
           </div>
-          <div className="logo-text" style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', letterSpacing: '0.02em', lineHeight: 1.15 }}>Unmanned</span>
-            <span style={{ fontSize: '0.65rem', fontWeight: 700, color: 'var(--primary)', letterSpacing: '0.04em', lineHeight: 1, marginTop: '2px' }}>店舗無人化コンサルティング</span>
+          <div className="logo-text" style={{ display: 'flex', flexDirection: 'column', whiteSpace: 'nowrap' }}>
+            <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', letterSpacing: '0.02em', lineHeight: 1.15, whiteSpace: 'nowrap' }}>Unmanned</span>
+            <span style={{ fontSize: '0.65rem', fontWeight: 700, color: 'var(--primary)', letterSpacing: '0.04em', lineHeight: 1, marginTop: '2px', whiteSpace: 'nowrap' }}>店舗無人化コンサルティング</span>
           </div>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '1.75rem' }}>
+        <nav className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.75rem, 1.25vw, 1.4rem)', flexShrink: 0 }}>
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} onClick={(e) => handleLinkClick(e, link.href)} style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, padding: '0.35rem 0.2rem', transition: 'color 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary)')} onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}>
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
+              style={{
+                color: 'var(--text-secondary)',
+                textDecoration: 'none',
+                fontSize: '0.88rem',
+                fontWeight: 600,
+                padding: '0.35rem 0.2rem',
+                transition: 'color 0.2s ease',
+                whiteSpace: 'nowrap',
+                flexShrink: 0
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
+            >
               {link.name}
             </a>
           ))}
-          <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className="btn btn-primary" style={{ marginLeft: '0.75rem', padding: '0.6rem 1.4rem', fontSize: '0.85rem' }}>
+          <a
+            href="#contact"
+            onClick={(e) => handleLinkClick(e, '#contact')}
+            className="btn btn-primary"
+            style={{
+              marginLeft: '0.5rem',
+              padding: '0.55rem 1.25rem',
+              fontSize: '0.85rem',
+              whiteSpace: 'nowrap',
+              flexShrink: 0
+            }}
+          >
             無料相談・お問合せ
           </a>
         </nav>
 
         {/* Mobile Menu Button */}
-        <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)} style={{ display: 'none', background: 'none', border: 'none', color: '#0f172a', cursor: 'pointer' }} aria-label="Toggle navigation">
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setIsOpen(!isOpen)}
+          style={{ display: 'none', background: 'none', border: 'none', color: '#0f172a', cursor: 'pointer', padding: '0.5rem' }}
+          aria-label="Toggle navigation"
+        >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="mobile-drawer" style={{ position: 'fixed', top: isScrolled ? '62px' : '72px', left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(255, 255, 255, 0.98)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', zIndex: 999, display: 'flex', flexDirection: 'column', padding: '2rem 1.5rem', gap: '1.5rem', borderBottom: '1px solid var(--border-subtle)', overflowY: 'auto' }}>
+        <div
+          className="mobile-drawer"
+          style={{
+            position: 'fixed',
+            top: isScrolled ? '62px' : '72px',
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(255, 255, 255, 0.98)',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
+            zIndex: 999,
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '2rem 1.5rem',
+            gap: '1.25rem',
+            borderBottom: '1px solid var(--border-subtle)',
+            overflowY: 'auto'
+          }}
+        >
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} onClick={(e) => handleLinkClick(e, link.href)} style={{ color: 'var(--text-primary)', textDecoration: 'none', fontSize: '1.15rem', fontWeight: 600, paddingBottom: '0.75rem', borderBottom: '1px solid var(--border-subtle)' }}>
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
+              style={{
+                color: 'var(--text-primary)',
+                textDecoration: 'none',
+                fontSize: '1.1rem',
+                fontWeight: 600,
+                paddingBottom: '0.75rem',
+                borderBottom: '1px solid var(--border-subtle)',
+                whiteSpace: 'nowrap'
+              }}
+            >
               {link.name}
             </a>
           ))}
-          <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className="btn btn-primary" style={{ marginTop: '1rem', width: '100%', padding: '0.75rem' }}>
+          <a
+            href="#contact"
+            onClick={(e) => handleLinkClick(e, '#contact')}
+            className="btn btn-primary"
+            style={{ marginTop: '0.5rem', width: '100%', padding: '0.75rem', whiteSpace: 'nowrap' }}
+          >
             無料相談・お問合せ
           </a>
         </div>
@@ -108,7 +177,7 @@ export default function Header() {
 
       {/* Styling specific rules that need standard CSS injections */}
       <style>{`
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .desktop-nav {
             display: none !important;
           }

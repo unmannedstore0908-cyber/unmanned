@@ -23,7 +23,8 @@ export default function Header() {
     { name: '料金プラン', href: '#plans' },
     { name: '導入ステップ', href: '#steps' },
     { name: '実績', href: '#results' },
-    { name: 'About Me', href: '#profile' }
+    { name: 'About Me', href: '#profile' },
+    { name: 'よくある質問', href: '#faq' }
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

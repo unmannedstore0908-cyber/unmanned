@@ -6,6 +6,7 @@ import Plans from './components/Plans';
 import Steps from './components/Steps';
 import Results from './components/Results';
 import Profile from './components/Profile';
+import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { useScrollReveal } from './hooks/useScrollReveal';
@@ -24,6 +25,7 @@ function App() {
         <Steps />
         <Results />
         <Profile />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

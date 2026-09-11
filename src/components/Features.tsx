@@ -92,11 +92,17 @@ export default function Features() {
         @media (max-width: 991px) {
           .pain-grid {
             grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+          }
+          .pain-grid .glass-panel {
+            padding: 1.25rem 1.25rem !important;
           }
           .strength-card {
             grid-template-columns: 1fr !important;
             text-align: center !important;
             justify-items: center;
+            padding: 1.75rem 1.25rem !important;
+            gap: 1.25rem !important;
           }
           .strength-card h3 {
             justify-content: center;

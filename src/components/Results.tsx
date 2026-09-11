@@ -84,6 +84,7 @@ export default function Results() {
             {stats.map((stat, idx) => (
               <div
                 key={idx}
+                className="stat-card"
                 style={{
                   padding: '1.75rem',
                   display: 'flex',
@@ -93,7 +94,9 @@ export default function Results() {
                   background: '#ffffff',
                   textAlign: 'left',
                   borderRadius: '14px',
-                  boxShadow: 'var(--shadow-sm)'
+                  boxShadow: 'var(--shadow-sm)',
+                  boxSizing: 'border-box',
+                  maxWidth: '100%'
                 }}
               >
                 
@@ -116,18 +119,18 @@ export default function Results() {
                 </div>
 
                 {/* Compare segment */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 40px 1.2fr', alignItems: 'center', margin: '0.25rem 0' }}>
-                  <div style={{ textAlign: 'center', padding: '0.75rem 0.5rem', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                    <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginBottom: '0.25rem' }}>一般的な有人店舗</div>
+                <div className="compare-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 36px 1.15fr', alignItems: 'center', margin: '0.25rem 0', gap: '0.35rem' }}>
+                  <div style={{ textAlign: 'center', padding: '0.75rem 0.4rem', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0', minWidth: 0 }}>
+                    <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginBottom: '0.25rem', whiteSpace: 'nowrap' }}>一般的な有人店舗</div>
                     <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-muted)', textDecoration: 'line-through' }}>{stat.before}</div>
                   </div>
                   
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <ArrowRight size={18} color="var(--primary)" />
+                    <ArrowRight size={16} color="var(--primary)" />
                   </div>
 
-                  <div style={{ textAlign: 'center', padding: '0.75rem 0.5rem', background: '#f0f9ff', borderRadius: '8px', border: '1.5px solid #bae6fd' }}>
-                    <div style={{ fontSize: '0.72rem', color: 'var(--primary)', fontWeight: 800, marginBottom: '0.25rem' }}>TrackLab 実績</div>
+                  <div style={{ textAlign: 'center', padding: '0.75rem 0.4rem', background: '#f0f9ff', borderRadius: '8px', border: '1.5px solid #bae6fd', minWidth: 0 }}>
+                    <div style={{ fontSize: '0.72rem', color: 'var(--primary)', fontWeight: 800, marginBottom: '0.25rem', whiteSpace: 'nowrap' }}>TrackLab 実績</div>
                     <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-primary)' }}>{stat.after}</div>
                   </div>
                 </div>
@@ -153,7 +156,18 @@ export default function Results() {
         @media (max-width: 991px) {
           .results-grid {
             grid-template-columns: 1fr !important;
-            gap: 2.5rem !important;
+            gap: 2rem !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .stat-card {
+            padding: 1.25rem 0.95rem !important;
+          }
+          .compare-grid {
+            grid-template-columns: 1fr 20px 1fr !important;
+          }
+          .compare-grid > div {
+            padding: 0.6rem 0.2rem !important;
           }
         }
       `}</style>

@@ -62,33 +62,37 @@ export default function FAQ() {
             return (
               <div
                 key={index}
-                className={`glass-panel reveal delay-${((index % 3) + 1) * 100}`}
+                className={`glass-panel faq-card reveal delay-${((index % 3) + 1) * 100}`}
                 style={{
                   border: isOpen ? '1px solid var(--primary)' : '1px solid var(--border-subtle)',
                   borderRadius: '12px',
                   background: '#ffffff',
                   overflow: 'hidden',
                   transition: 'all 0.25s ease',
-                  boxShadow: isOpen ? '0 4px 14px rgba(2, 132, 199, 0.08)' : 'var(--shadow-card)'
+                  boxShadow: isOpen ? '0 4px 14px rgba(2, 132, 199, 0.08)' : 'var(--shadow-card)',
+                  boxSizing: 'border-box',
+                  maxWidth: '100%'
                 }}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
+                  className="faq-btn"
                   style={{
                     width: '100%',
-                    padding: '1.35rem 1.75rem',
+                    padding: '1.35rem 1.5rem',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    gap: '1rem',
+                    gap: '0.85rem',
                     background: 'none',
                     border: 'none',
                     textAlign: 'left',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    boxSizing: 'border-box'
                   }}
                   aria-expanded={isOpen}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', minWidth: 0 }}>
                     <span
                       style={{
                         width: '28px',
@@ -107,7 +111,7 @@ export default function FAQ() {
                     >
                       Q
                     </span>
-                    <span style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.45 }}>
+                    <span style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.45 }}>
                       {item.question}
                     </span>
                   </div>
@@ -124,12 +128,14 @@ export default function FAQ() {
 
                 {isOpen && (
                   <div
+                    className="faq-answer"
                     style={{
-                      padding: '0 1.75rem 1.5rem 4rem',
+                      padding: '0 1.5rem 1.35rem 3.5rem',
                       color: 'var(--text-secondary)',
-                      fontSize: '0.96rem',
+                      fontSize: '0.94rem',
                       lineHeight: 1.8,
-                      borderTop: '1px solid #f8fafc'
+                      borderTop: '1px solid #f8fafc',
+                      boxSizing: 'border-box'
                     }}
                   >
                     <p>{item.answer}</p>
@@ -156,6 +162,22 @@ export default function FAQ() {
         </div>
 
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .faq-btn {
+            padding: 1.1rem 1rem !important;
+            gap: 0.65rem !important;
+          }
+          .faq-btn span {
+            font-size: 0.95rem !important;
+          }
+          .faq-answer {
+            padding: 0 1rem 1.25rem 1rem !important;
+            font-size: 0.88rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

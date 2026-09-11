@@ -192,9 +192,9 @@ export default function Plans() {
           ))}
         </div>
 
-        {/* Advisory Warning Bottom Banner */}
+        {/* Real World Reality Box */}
         <div
-          className="reveal"
+          className="reveal plans-info-box"
           style={{
             marginTop: '3.5rem',
             padding: '1.5rem 2rem',
@@ -230,7 +230,16 @@ export default function Plans() {
         @media (max-width: 991px) {
           .plans-grid {
             grid-template-columns: 1fr !important;
-            gap: 2.5rem !important;
+            gap: 2rem !important;
+          }
+          .plan-card {
+            padding: 2rem 1.25rem !important;
+          }
+          .plans-info-box {
+            padding: 1.25rem 1rem !important;
+            flex-direction: column !important;
+            text-align: center !important;
+            gap: 0.75rem !important;
           }
           .plan-card-popular {
             transform: scale(1) !important;

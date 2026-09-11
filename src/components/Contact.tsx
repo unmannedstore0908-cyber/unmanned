@@ -99,25 +99,31 @@ export default function Contact() {
             </div>
 
             {/* CTAボタン（Googleフォームへ遷移） */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.85rem', marginTop: '0.25rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.85rem', marginTop: '0.25rem', width: '100%' }}>
               <a
                 href={GOOGLE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
+                className="btn btn-primary contact-cta-btn"
                 style={{
                   width: '100%',
-                  padding: '1.1rem 2rem',
-                  fontSize: '1.1rem',
+                  maxWidth: '100%',
+                  boxSizing: 'border-box',
+                  padding: '1.1rem 1.5rem',
+                  fontSize: '1.05rem',
                   fontWeight: 700,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: '0.75rem',
-                  letterSpacing: '0.02em'
+                  gap: '0.65rem',
+                  letterSpacing: '0.02em',
+                  textAlign: 'center',
+                  whiteSpace: 'normal',
+                  wordBreak: 'break-word'
                 }}
               >
-                Googleフォームで無料相談・お問い合わせ <ExternalLink size={20} />
+                <span>Googleフォームで無料相談・お問い合わせ</span>
+                <ExternalLink size={19} style={{ flexShrink: 0 }} />
               </a>
 
               <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center', lineHeight: 1.6 }}>
@@ -136,8 +142,13 @@ export default function Contact() {
           .consult-topics-grid {
             grid-template-columns: 1fr !important;
           }
-          .contact-section > div {
-            padding: 0 1rem;
+          .contact-section {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+          }
+          .contact-cta-btn {
+            font-size: 0.94rem !important;
+            padding: 0.95rem 1rem !important;
           }
           .hide-on-mobile {
             display: none;

@@ -72,9 +72,9 @@ export default function Hero() {
             <span style={{ fontSize: '0.82rem', fontWeight: 700, color: '#0369a1', letterSpacing: '0.04em' }}>店舗無人化コンサルティング「Unmanned」</span>
           </div>
 
-          <h1 className="hero-title" style={{ fontSize: 'clamp(2.1rem, 3.8vw, 3.2rem)', fontWeight: 800, lineHeight: 1.3, marginBottom: '1.75rem', letterSpacing: '-0.02em', wordBreak: 'keep-all', color: '#0f172a' }}>
-            <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>店舗ごとの最適な</span><br />
-            <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+          <h1 className="hero-title" style={{ fontSize: 'clamp(1.9rem, 3.8vw, 3.2rem)', fontWeight: 800, lineHeight: 1.3, marginBottom: '1.75rem', letterSpacing: '-0.02em', color: '#0f172a' }}>
+            <span>店舗ごとの最適な</span><br />
+            <span>
               <span style={{ color: 'var(--primary)' }}>『無人化』</span>をデザインする。
             </span>
           </h1>
@@ -112,11 +112,12 @@ export default function Hero() {
           
           {/* Main Visual Box (Clean, Architectural Style) */}
           <div
-            className="glass-panel"
+            className="glass-panel hero-main-box"
             style={{
               padding: '2.5rem 2.25rem',
               width: '100%',
               maxWidth: '500px',
+              boxSizing: 'border-box',
               display: 'flex',
               flexDirection: 'column',
               gap: '1.5rem',
@@ -129,12 +130,12 @@ export default function Hero() {
               zIndex: 2
             }}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.95rem' }}>
-              <h3 style={{ fontSize: '0.96rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.55rem', fontWeight: 800, whiteSpace: 'nowrap' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.95rem', flexWrap: 'wrap' }}>
+              <h3 style={{ fontSize: '0.96rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.55rem', fontWeight: 800 }}>
                 <Server size={18} color="var(--primary)" style={{ flexShrink: 0 }} /> 
                 <span>コアシステム自動連携構造</span>
               </h3>
-              <span style={{ fontSize: '0.72rem', color: 'var(--primary)', fontWeight: 700, background: '#e0f2fe', padding: '0.22rem 0.65rem', borderRadius: '9999px', whiteSpace: 'nowrap', flexShrink: 0 }}>
+              <span style={{ fontSize: '0.72rem', color: 'var(--primary)', fontWeight: 700, background: '#e0f2fe', padding: '0.22rem 0.65rem', borderRadius: '9999px', flexShrink: 0 }}>
                 全SaaS対応
               </span>
             </div>
@@ -146,8 +147,8 @@ export default function Hero() {
                   <CreditCard size={19} color="var(--primary)" />
                 </div>
                 <div style={{ textAlign: 'left', flexGrow: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)', whiteSpace: 'nowrap' }}>1. 自由な予約・事前決済</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.15rem', whiteSpace: 'nowrap' }}>既存Webサイト / LINE / 専用SaaS</div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)' }}>1. 自由な予約・事前決済</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.15rem' }}>既存Webサイト / LINE / 専用SaaS</div>
                 </div>
               </div>
 
@@ -156,8 +157,8 @@ export default function Hero() {
                   <Server size={19} color="var(--primary)" />
                 </div>
                 <div style={{ textAlign: 'left', flexGrow: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)', whiteSpace: 'nowrap' }}>2. リアルタイム自動連携</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.15rem', whiteSpace: 'nowrap' }}>暗証番号 / QRキーを即時自動生成</div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)' }}>2. リアルタイム自動連携</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.15rem' }}>暗証番号 / QRキーを即時自動生成</div>
                 </div>
               </div>
 
@@ -166,14 +167,14 @@ export default function Hero() {
                   <Key size={19} color="var(--primary)" />
                 </div>
                 <div style={{ textAlign: 'left', flexGrow: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)', whiteSpace: 'nowrap' }}>3. スマートロック自動開錠</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.15rem', whiteSpace: 'nowrap' }}>各種IoT電気錠 / 自動ドアと直結</div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)' }}>3. スマートロック自動開錠</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.15rem' }}>各種IoT電気錠 / 自動ドアと直結</div>
                 </div>
               </div>
             </div>
 
             {/* Tiny tag */}
-            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center', fontWeight: 500, borderTop: '1px solid var(--border-subtle)', paddingTop: '0.95rem', whiteSpace: 'nowrap' }}>
+            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center', fontWeight: 500, borderTop: '1px solid var(--border-subtle)', paddingTop: '0.95rem' }}>
               店舗の扉形状・運用に合わせて認証デバイスを自在に選定
             </div>
           </div>
@@ -185,24 +186,26 @@ export default function Hero() {
       <style>{`
         @media (max-width: 991px) {
           .hero-section {
-            padding-top: 8rem !important;
-            padding-bottom: 4rem !important;
+            padding-top: 7.5rem !important;
+            padding-bottom: 3.5rem !important;
           }
           .hero-section .container {
             grid-template-columns: 1fr !important;
-            gap: 3.5rem !important;
+            gap: 2.5rem !important;
+            padding: 0 1.25rem !important;
           }
           .hero-content {
             align-items: center !important;
             text-align: center !important;
           }
           .hero-title {
-            font-size: clamp(1.5rem, 5.5vw, 2.3rem) !important;
+            font-size: clamp(1.6rem, 6.5vw, 2.3rem) !important;
             text-align: center;
             line-height: 1.35 !important;
           }
           .hero-subtitle {
             text-align: center;
+            font-size: 0.95rem !important;
           }
           .hero-actions {
             justify-content: center !important;
@@ -213,6 +216,13 @@ export default function Hero() {
           }
           .hero-stats {
             justify-content: center !important;
+            margin-top: 2.5rem !important;
+          }
+          .hero-main-box {
+            padding: 1.5rem 1.25rem !important;
+          }
+          .visual-card {
+            padding: 0.9rem 1rem !important;
           }
         }
       `}</style>

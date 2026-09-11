@@ -114,7 +114,7 @@ export default function Flow() {
 
           {/* Right panel: Detail Showcase */}
           <div
-            className="reveal-right"
+            className="reveal-right flow-detail-card"
             style={{
               padding: '2.5rem 2.25rem',
               display: 'flex',
@@ -125,7 +125,9 @@ export default function Flow() {
               background: '#ffffff',
               borderRadius: '14px',
               boxShadow: 'var(--shadow-md)',
-              position: 'relative'
+              position: 'relative',
+              boxSizing: 'border-box',
+              maxWidth: '100%'
             }}
           >
             <div>
@@ -200,6 +202,12 @@ export default function Flow() {
           .flow-interactive-container {
             grid-template-columns: 1fr !important;
             gap: 1.5rem !important;
+          }
+          .flow-detail-card {
+            padding: 1.5rem 1.25rem !important;
+          }
+          .step-selector {
+            padding: 1rem 1.15rem !important;
           }
           .step-selector:hover {
             transform: translateY(-2px);

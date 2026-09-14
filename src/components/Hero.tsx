@@ -89,7 +89,7 @@ export default function Hero() {
               無料相談・お見積り <ArrowRight size={17} />
             </button>
             <button onClick={() => handleScrollTo('#plans')} className="btn btn-secondary" style={{ padding: '0.9rem 2rem', fontSize: '0.95rem' }}>
-              提供プランを見る
+              支援プランを見る
             </button>
           </div>
 

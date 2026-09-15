@@ -31,6 +31,7 @@ export default function Header() {
 
   const navLinks = [
     { name: '特長・強み', href: '#features' },
+    { name: '対応業種', href: '#industries' },
     { name: '無人化の流れ', href: '#flow-diagram' },
     { name: '支援プラン', href: '#plans' },
     { name: '導入ステップ', href: '#steps' },

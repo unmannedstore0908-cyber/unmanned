@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
+import Industries from './components/Industries';
 import Flow from './components/Flow';
 import Plans from './components/Plans';
 import Steps from './components/Steps';
@@ -20,6 +21,7 @@ function App() {
       <main style={{ flexGrow: 1 }}>
         <Hero />
         <Features />
+        <Industries />
         <Flow />
         <Plans />
         <Steps />

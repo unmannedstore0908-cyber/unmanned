@@ -40,7 +40,7 @@ export default function Contact() {
           /* Google Form Iframe 埋め込み表示 */
           <div className="reveal" style={{ padding: '2rem', border: '1px solid var(--border-subtle)', background: '#ffffff', borderRadius: '16px', boxShadow: 'var(--shadow-md)' }}>
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem' }}>
-              <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" onClick={handleGoogleFormClick} className="btn btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.85rem', gap: '0.4rem' }}>
+              <a href="/form" target="_blank" rel="noopener noreferrer" onClick={handleGoogleFormClick} className="btn btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.85rem', gap: '0.4rem' }}>
                 別タブで開く <ExternalLink size={14} />
               </a>
             </div>
@@ -116,7 +116,7 @@ export default function Contact() {
             {/* CTAボタン（Googleフォームへ遷移） */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.85rem', marginTop: '0.25rem', width: '100%' }}>
               <a
-                href={GOOGLE_FORM_URL}
+                href="/form"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleGoogleFormClick}

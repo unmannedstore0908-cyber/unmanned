@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18440905751"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-18440905751');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>お問い合わせフォームへ移動中 | 店舗無人化コンサルティング Unmanned</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f8fafc;
+        color: #1e293b;
+      }
+      .card {
+        background: #ffffff;
+        padding: 2.5rem 2rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        max-width: 440px;
+        width: 90%;
+        border: 1px solid #e2e8f0;
+      }
+      .spinner {
+        width: 36px;
+        height: 36px;
+        margin: 0 auto 1.5rem;
+        border: 3px solid #e2e8f0;
+        border-top: 3px solid #0284c7;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      h1 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0 0 0.75rem;
+        color: #0f172a;
+      }
+      p {
+        font-size: 0.9rem;
+        color: #64748b;
+        margin: 0 0 1.25rem;
+        line-height: 1.6;
+      }
+      a {
+        color: #0284c7;
+        text-decoration: underline;
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="spinner"></div>
+      <h1>お問い合わせフォームへ移動中…</h1>
+      <p>まもなくGoogleフォームへ自動的に移動します。<br>画面が切り替わらない場合は下のリンクをクリックしてください。</p>
+      <a id="redirect-link" href="https://docs.google.com/forms/d/e/1FAIpQLSf754B8uIJkEkE-HSy4C1ZPs3IFZO_jTUTDWKi1IFYDLfFOFg/viewform?usp=publish-editor">Googleフォームを開く</a>
+    </div>
+
+    <script>
+      var targetUrl = "https://docs.google.com/forms/d/e/1FAIpQLSf754B8uIJkEkE-HSy4C1ZPs3IFZO_jTUTDWKi1IFYDLfFOFg/viewform?usp=publish-editor";
+      setTimeout(function() {
+        window.location.replace(targetUrl);
+      }, 500);
+    </script>
+  </body>
+</html>

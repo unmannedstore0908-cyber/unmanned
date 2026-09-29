@@ -7,6 +7,21 @@ export const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSf754B8
 const EMBED_IN_PAGE = false;
 
 export default function Contact() {
+  const handleGoogleFormClick = () => {
+    if (typeof window !== 'undefined') {
+      const win = window as unknown as { gtag?: (...args: unknown[]) => void; dataLayer?: unknown[] };
+      if (typeof win.gtag === 'function') {
+        win.gtag('event', 'conversion', {
+          send_to: 'AW-18440905751',
+        });
+        win.gtag('event', 'generate_lead', {
+          event_category: 'engagement',
+          event_label: 'Google Form Click',
+        });
+      }
+    }
+  };
+
   return (
     <section id="contact" className="section contact-section" style={{ background: '#ffffff', borderBottom: '1px solid var(--border-subtle)', position: 'relative' }}>
       <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '800px' }}>
@@ -25,7 +40,7 @@ export default function Contact() {
           /* Google Form Iframe 埋め込み表示 */
           <div className="reveal" style={{ padding: '2rem', border: '1px solid var(--border-subtle)', background: '#ffffff', borderRadius: '16px', boxShadow: 'var(--shadow-md)' }}>
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem' }}>
-              <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.85rem', gap: '0.4rem' }}>
+              <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" onClick={handleGoogleFormClick} className="btn btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.85rem', gap: '0.4rem' }}>
                 別タブで開く <ExternalLink size={14} />
               </a>
             </div>
@@ -104,6 +119,7 @@ export default function Contact() {
                 href={GOOGLE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleGoogleFormClick}
                 className="btn btn-primary contact-cta-btn"
                 style={{
                   width: '100%',
